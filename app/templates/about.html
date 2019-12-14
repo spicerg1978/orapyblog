@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hi, welcome to .... {{ site.site_name }}!</h1>
+    <h1>About Me...... {{ about.about }}</h1>
+     {% for blog in blogs %}
+       <div><p>Blog Post : <b>{{ blog.title }}</b></p></div>
+    {% endfor %}
+{% endblock %}

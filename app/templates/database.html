@@ -1,0 +1,95 @@
+  <head>
+    <title>Flask app</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/gjs.css') }}">
+  </head>
+
+{% extends "base.html" %}
+
+{% block navbar %}
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ url_for('index') }}">OraPy</a>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('database') }}">Database</a></li>
+                    <li><a href="{{ url_for('programming') }}">Programming</a></li>
+                    <li><a href="{{ url_for('devops') }}">DevOps</a></li>
+                    <li><a href="{{ url_for('script') }}">Scripts</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                    <li><a href="{{ url_for('login') }}">Login</a></li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url_for('oracle') }}" >Oracle</a></li>
+                    <li><a href="{{ url_for('postgres') }}">Postgres</a></li>
+                    <li><a href="{{ url_for('mysql') }}">MySQL</a></li>
+                    <li><a href="{{ url_for('mongodb') }}">MongoDB</a></li>
+                    <li><a href="{{ url_for('hadoop') }}">Hadoop</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
+
+{% block content %}
+
+<div class="row">
+  <div class="column"> 
+    <h2 align=middle><b>Latest</b></h2>
+    <h2 align=middle><b>Oracle Blogs</b></h2>
+     {% for orablog in orablogs %}
+       <div><p align=middle><b><a href="http://127.0.0.1:5000/blog/{{ orablog.id }}"> {{ orablog.title }}</a></b></p></div>
+     {% endfor %}
+  </div>
+  <div class="column">
+    <h2 align=middle><b>Latest</b></h2>
+    <h2 align=middle><b>Postgress Blogs</b></h2>
+     {% for psqlblog in psqlblogs %}
+      <div><p align=middle><b><a href="http://127.0.0.1:5000/blog/{{ psqlblog.id }}"> {{ psqlblog.title }}</a></b></p></div>
+     {% endfor %}
+  </div>
+  <div class="column"> 
+    <h2 align=middle><b>Latest</b></h2>
+    <h2 align=middle><b>MySQL Blogs</b></h2>
+     {% for mysqlblog in mysqlblogs %}
+      <div><p align=middle><b><a href="http://127.0.0.1:5000/blog/{{ mysqlblog.id }}"> {{ mysqlblog.title }}</a></b></p></div>
+     {% endfor %}
+  </div>
+</div>
+<div class="row2">
+  <div class="column"> 
+    <h2 align=middle><b>Latest</b></h2>
+    <h2 align=middle><b>Hadoop Blogs</b></h2>
+     {% for hadblog in hadblogs %}
+       <div><p align=middle><b><a href="http://127.0.0.1:5000/blog/{{ hadblog.id }}"> {{ hadblog.title }}</a></b></p></div>
+     {% endfor %}
+  </div>
+  <div class="column">
+    <h2 align=middle><b>Latest</b></h2>
+    <h2 align=middle><b>Hadoop Blogs</b></h2>
+     {% for monblog in monblogs %}
+       <div><p align=middle><b><a href="http://127.0.0.1:5000/blog/{{ monblog.id }}"> {{ monblog.title }}</a></b></p></div>
+     {% endfor %}
+  </div>
+  <div class="column">
+    <h2 align=middle><b>Latest</b></h2>
+   <h2 align=middle><b>Cassandra Blogs</b></h2>
+     {% for cassblog in cassblogs %}
+       <div><p align=middle><b><a href="http://127.0.0.1:5000/blog/{{ cassblog.id }}"> {{ cassblog.title }}</a></b></p></div>
+     {% endfor %}
+  </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,15 @@
+<html>
+    <head>
+      {% if title %}
+      <title>{{ title }} - OraPyblog</title>
+      {% else %}
+      <title>Welcome to OraPyblog</title>
+      {% endif %}
+    </head>
+    <body>
+        <div>OraPyblog: <a href="/index">Home</a></div>
+        <a href="/about"></about></a>
+        <hr>
+        {% block content %}{% endblock %}
+    </body>
+</html>

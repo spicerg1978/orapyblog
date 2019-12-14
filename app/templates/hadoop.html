@@ -1,0 +1,11 @@
+{% extends "database.html" %}
+
+{% block content %}
+
+  <div><p><b>Hadoop blogs</b></p></div>
+  {% for blog in blogs %}
+       <div><p>Blog Post: {{ blog.title }}</b></p></div>
+       <div><p>Blog Details: {{ blog.blog_detail }}</b></p></div>
+  {% endfor %}
+
+{% endblock %}

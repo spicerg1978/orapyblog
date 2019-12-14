@@ -1,0 +1,11 @@
+{% extends "database.html" %}
+
+{% block content %}
+
+  <div><p><b>Oracle blogs</b></p></div>
+  {% for orablog in blogs %}
+       <div><p>Blog Post: {{ orablog.title }}</b></p></div>
+       <div><p>Blog Details: {{ orablog.blog_detail }}</b></p></div>
+  {% endfor %}
+
+{% endblock %}
